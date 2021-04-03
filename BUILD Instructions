@@ -1,0 +1,4 @@
+** PROJECT WONT WORK PROPERLY BECAUSE OF POSTGRESQL DB NOT matching
+Start Flask API:
+source flask_app/Scripts/activate
+flask run

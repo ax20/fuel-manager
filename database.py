@@ -17,9 +17,8 @@ class FuelEntries(pgdb.Model):
     __tablename__ = "fuel_tracking"
     __table_args__ = {'extend_existing': True}
 
-    entryID = pgdb.Column(pgdb.Integer(), primary_key=True)
     carLBL = pgdb.Column(pgdb.String(), nullable=False)
-    dateTXN = pgdb.Column(pgdb.String(12), nullable=False)
+    dateTXN = pgdb.Column(pgdb.String(12), primary_key=True)
     mileageTXN = pgdb.Column(pgdb.Integer(), nullable=False)
     distanceTvlFRMprevENT = pgdb.Column(pgdb.Integer(), nullable=False)
     gasTatTXN = pgdb.Column(pgdb.Float(), nullable=False)
@@ -27,6 +26,7 @@ class FuelEntries(pgdb.Model):
     mpgTXN = pgdb.Column(pgdb.Float(), nullable=False)
 
     def __init(self, carLBL, dateTXN, mileageTXN, distanceTvlFRMprevENT, gasTatTXN, priceTatTXN, mpgTXN):
+        
         self.carLBL = carLBL
         self.dateTXN = dateTXN
         self.mileageTXN = mileageTXN
@@ -40,15 +40,15 @@ class GymSession(pgdb.Model):
     __tablename__ = "gym_tracking"
     __table_args__ = {'extend_existing': True}
 
-    sessionID = pgdb.Column(pgdb.Integer(), primary_key=True)
-    indvName = pgdb.Column(pgdb.String(), nullable=False)
-    dateSESH = pgdb.Column(pgdb.String(12), nullable=False)
+    indvNAME = pgdb.Column(pgdb.String(), nullable=False)
+    dateSESH = pgdb.Column(pgdb.String(12), primaWry_key=True)
     bodyAtSESH = pgdb.Column(pgdb.String(), nullable=False)
     startSESH = pgdb.Column(pgdb.String(), nullable=False)
     endSESH = pgdb.Column(pgdb.String(), nullable=False)
     calEXP = pgdb.Column(pgdb.Float(), nullable=False)
 
     def __init(self, indvNAME, dateSESH, bodyAtSESH, startSESH, endSESH, calEXP):
+        
         self.indvNAME = indvNAME
         self.dateSESH = dateSESH
         self.bodyAtSESH = bodyAtSESH
